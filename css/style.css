@@ -1,0 +1,288 @@
+#bookingWrapper {
+  background: rgba(181, 181, 181, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(20px); */
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(181, 181, 181, 0.31);
+  display: flex;
+  min-height: 300px;
+  margin: 20px 0;
+}
+
+#step-0 {
+  width: 25%;
+}
+
+#step-1,
+#step-2 {
+  width: 75%;
+}
+
+#step-2 {
+  display: flex;
+}
+
+#bookingWrapper p,
+#bookingWrapper h6 {
+  margin-bottom: 0;
+}
+
+#bookingWrapper #step-1 {
+  display: flex;
+}
+
+#available-time-slots {
+  height: 400px;
+  overflow: scroll;
+}
+
+#available-time-slots::-webkit-scrollbar {
+  display: none;
+}
+#available-time-slots button {
+  border: 2px solid #fafafa;
+  width: 100%;
+  margin-bottom: 10px;
+  background: #fafafa;
+  color: #000;
+  border-radius: 8px;
+}
+#available-time-slots .booking-time-slot.selected {
+  border: 2px solid #0370b9;
+  color: #0370b9;
+  font-weight: 600;
+  background: transparent;
+}
+#available-time-slots button:last-of-type {
+  margin-bottom: 0;
+}
+
+.bookingCol {
+  padding: 30px;
+  position: relative;
+}
+.bookingCol.col25 {
+  width: 25%;
+}
+
+.bookingCol.col50 {
+  width: 50%;
+}
+.bookingCol.col33 {
+  width: 33.3333%;
+}
+
+.bookingCol.col66 {
+  width: 66.6666%;
+}
+
+.bookingCol.col75 {
+  width: 75%;
+}
+
+#continue-to-step-2 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.bookingCol:not(:last-of-type):after {
+  content: "";
+  height: 82%;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto 0;
+  background-color: #d3d3d4;
+}
+
+#service-booking-calendar,
+#service-booking-calendar .ui-datepicker-inline {
+  height: 100%;
+  width: 100%;
+}
+#bookingWrapper .bookingCol.serviceCol {
+  height: 100%;
+}
+#bookingWrapper .bookingCol:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#bookingWrapper .bookingSubRow {
+  width: 100%;
+  flex-shrink: 1;
+}
+#bookingWrapper .bookingSubRow:nth-of-type(2) {
+  width: 100%;
+  flex-shrink: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#bookingWrapper #service-selector {
+  width: 100%;
+  border-radius: 8px;
+  color: #000;
+}
+
+#bookingWrapper #selected-date-display {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Calendar Styling */
+#bookingWrapper .ui-datepicker-inline {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+#bookingWrapper .ui-datepicker td {
+  padding: 5px;
+}
+
+#bookingWrapper .ui-datepicker .ui-datepicker-header {
+  padding: 8px 0;
+  background: #fafafa;
+  border-radius: 8px !important;
+}
+#bookingWrapper .ui-datepicker .ui-datepicker-prev,
+#bookingWrapper .ui-datepicker .ui-datepicker-next {
+  top: 0;
+  height: 100%;
+}
+#bookingWrapper .ui-datepicker-calendar {
+  border: none;
+}
+
+#bookingWrapper .ui-datepicker-calendar thead {
+  border-color: transparent;
+  border-width: 5px 0;
+  border-style: solid;
+}
+
+#bookingWrapper .ui-datepicker-calendar .ui-state-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: none;
+  background: transparent;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#bookingWrapper .ui-state-active {
+  border: none !important;
+  background: #0370b9 !important;
+}
+/* END Calendar Styling */
+
+/* Step 2 Styling */
+#go-back-to-step-1 {
+  margin-top: 20px;
+  padding: 0;
+  background: transparent;
+  color: rgb(75, 79, 88);
+  text-decoration: underline;
+}
+
+#bookingWrapper #booking-form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+#bookingWrapper #booking-form #customer-name,
+#bookingWrapper #booking-form #customer-phone,
+#bookingWrapper #booking-form #customer-email {
+  margin-bottom: 10px;
+}
+#bookingWrapper #booking-form input {
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 800px) {
+  #bookingWrapper {
+    flex-wrap: wrap;
+  }
+  #step-0,
+  #step-1,
+  #step-2 {
+    width: 100%;
+  }
+  #bookingWrapper #step-1 {
+    flex-wrap: nowrap;
+  }
+  #bookingWrapper .bookingCol:first-of-type {
+    flex-direction: row;
+    width: 100%;
+  }
+  #bookingWrapper .bookingSubRow {
+    width: 25%;
+    flex-shrink: 1;
+  }
+  #bookingWrapper .bookingSubRow:nth-of-type(2) {
+    width: 50%;
+    flex-shrink: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #bookingWrapper .bookingCol:first-of-type:after {
+    display: none;
+  }
+  #bookingWrapper .bookingCol:last-of-type {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #bookingWrapper #step-1,
+  #bookingWrapper #step-2 {
+    flex-wrap: wrap;
+  }
+  #bookingWrapper .bookingCol.serviceCol {
+    flex-wrap: wrap;
+  }
+  #bookingWrapper .bookingSubRow.selector {
+    order: 1;
+    width: 100%;
+    padding-bottom: 25px;
+  }
+  #bookingWrapper .bookingSubRow.details {
+    order: 3;
+    width: 50%;
+    padding-left: 10px;
+  }
+  #bookingWrapper .bookingSubRow.title {
+    order: 2;
+    width: 50%;
+    align-items: flex-start;
+    padding-right: 10px;
+  }
+  #bookingWrapper .bookingCol {
+    width: 100% !important;
+  }
+  #bookingWrapper .bookingCol:after {
+    display: none;
+  }
+  #bookingWrapper #step-2 .bookingCol:nth-of-type(1) {
+    justify-content: flex-start;
+  }
+  #bookingWrapper #booking-form {
+    padding: 0;
+  }
+  #bookingWrapper #step-0 .bookingCol:nth-of-type(1) {
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "require": {
+    "stripe/stripe-php": "^7.89",
+    "swiftmailer/swiftmailer": "^6.3",
+    "symfony/mailer": "^6.2",
+    "symfony/mime": "^6.2",
+    "symfony/mailgun-mailer": "^6.2"
+  }
+}
