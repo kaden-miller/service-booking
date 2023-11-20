@@ -15,6 +15,16 @@ require_once(plugin_dir_path(__FILE__) . 'content/stripe-content.php');
 // Require other PHP files from the plugin folder
 // require_once(plugin_dir_path(__FILE__) . 'path/to/your/other-file.php');
 
+
+// Include our updater file
+if( ! class_exists( 'Pizza_Updater' ) ){
+	include_once( plugin_dir_path( __FILE__ ) . 'updater.php');
+}
+$updater = new Pizza_Updater( __FILE__ ); // instantiate our class
+$updater->set_username( 'kaden-miller' ); // set username
+$updater->set_repository( 'service-booking' ); // set repo
+$updater->initialize(); // initialize the updater
+
  
 function service_booking_enqueue_admin_scripts($hook) {
     if ('toplevel_page_service-booking' !== $hook) {
