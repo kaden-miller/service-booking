@@ -235,7 +235,7 @@ function service_booking_enqueue_scripts() {
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('service_booking_nonce'),
         'blackout_dates' => $blackout_dates,
-        'services' => $services, // Add this line
+        'services' => $services,
     ));
 
         // Get Stripe keys from the options

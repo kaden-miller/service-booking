@@ -168,11 +168,10 @@ jQuery(document).ready(function ($) {
       },
       success: function (response) {
         if (response.success) {
-          // Do something on success...
-          // For example, remove the table row from the UI
+          // Remove the row on success
           $thisRow.remove();
         } else {
-          // Do something on error...
+          console.log(response);
         }
       },
     });

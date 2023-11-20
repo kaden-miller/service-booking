@@ -235,7 +235,7 @@ jQuery(document).ready(function ($) {
           if (response.data.redirect_url) {
             window.location.href = response.data.redirect_url;
           } else {
-            // ... other success handling logic ...
+            console.log(response);
           }
 
           // Update the available time slots with the new booked slots data
@@ -254,7 +254,7 @@ jQuery(document).ready(function ($) {
           if (response.data && response.data.redirect_url) {
             window.location.href = response.data.redirect_url;
           } else {
-            // ... other error handling logic ...
+
           }
         }
         $("#service-booking-calendar").datepicker("setDate", null);
